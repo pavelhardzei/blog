@@ -3,14 +3,7 @@ from django.http import HttpResponse
 from .models import Post
 
 def home(request):
-    context = {
-        'posts': Post.objects.all(),
-        'title': 'Home'
-    }
-    return render(request, 'blog/home.html', context=context)
+    return render(request, 'blog/home.html', {'posts': Post.objects.all(), 'title': 'Home'})
 
 def about(request):
-    context = {
-        'title': 'About'
-    }
-    return render(request, 'blog/about.html', context=context)
+    return render(request, 'blog/about.html', {'title': 'About'})
