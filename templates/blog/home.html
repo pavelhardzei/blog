@@ -8,5 +8,11 @@
     </head>
     <body>
         <h1>Blog home!</h1>
+        {% for post in posts %}
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.author }}</p>
+            <p>{{ post.content }}</p>
+            <p>{{ post.date_posted }}</p>
+        {% endfor %}
     </body>
 </html>
